@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+- lsblk - to check storage
+- mkfs.ext4 /dev/xvdf - format the storage
+- mount /dev/xvdf vol01 - to mpount volume where vol01 is directory
+- mountpoint vol01 - to check the mountpoint
+
+- EC2
+- EBS elastic block storage
+- static ip and dynamic ip - difference
+- metadta servce - IMDS - instance metadat services - magic ip 169.254.169.254
+
+
+- AMI - amazon machnine services
+- - IAM - identity and access management service
+

@@ -37,4 +37,4 @@ const ParticleBg = () => {
   return <></>;
 };
 
-export default ParticleBg;
+export default React.memo(ParticleBg);
