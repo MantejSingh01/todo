@@ -33,9 +33,6 @@ const todoSlice = createSlice({
     },
     extraReducers:(builder)=>{
         builder.addCase(todoThunk.fulfilled,(state, action )=>{
-
-        //    state = action.payload;
-        console.log(action.payload)
         return [...state, ...action.payload];
         }).addCase(todoThunk.pending,(state,action)=>{
             console.log(state,action,"==========>>>>> pending")

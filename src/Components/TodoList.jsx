@@ -2,31 +2,25 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import List from "./List";
 import ParticleBg from "../particleBg";
 import axios from "axios";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addTodo, todoThunk } from "../Redux/todoSlice";
 
 const TodoList = () => {
   const [text, setText] = useState("");
-
   const initialTodoState = useSelector((state) => state.todo);
- const [todo, setTodo] = useState(initialTodoState);
- const [showAlert, setShowAlert] = useState(false);
+  const [todo, setTodo] = useState(initialTodoState);
+  const [showAlert, setShowAlert] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     // getTodosList();
-    dispatch(todoThunk())
-  
+    dispatch(todoThunk());
   }, []);
 
-
-  
-
-  useEffect(()=>{
-       setTodo(initialTodoState)
-  },[initialTodoState]);
-
+  useEffect(() => {
+    setTodo(initialTodoState);
+  }, [initialTodoState]);
 
   // handled by redux thunk to get all the values at once
 
@@ -40,7 +34,6 @@ const TodoList = () => {
   //   }
   // };
 
-
   const handleText = (e) => {
     let searchedString = e.target.value;
     setText(searchedString);
@@ -51,7 +44,7 @@ const TodoList = () => {
         const res = await axios.post("http://localhost:3002/addTodo", {
           todoName: text,
         });
-        console.log(res)
+        console.log(res);
         // Handling using redux toolkit
 
         // setTodo((prevTodo) => [
@@ -59,13 +52,13 @@ const TodoList = () => {
         //   { _id: res.data._id , todoName:res.data.todoName },
         // ]);
 
-        dispatch(addTodo(res.data))
+        dispatch(addTodo(res.data));
         setText("");
       } else {
         setShowAlert(true);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -102,7 +95,9 @@ const TodoList = () => {
           </span>
         </>
       )}
+      
       <List todo={todo} setTodo={setTodo} />
+     
     </div>
   );
 };

@@ -7,3 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+[data-rbd-droppable-id="todoContainer"]{
+  width: 100%;
+}
+[data-class="itemInner"]{
+  flex: 1;
+}
